@@ -1,11 +1,11 @@
-## @dylan/eslint-config
+## @dylanarmstrong/eslint-config
 
 ### Installation
 
 Install with `npm` (or `yarn`):
 
 ```bash
-npm i @dylan/eslint-config --save-dev
+npm i @dylanarmstrong/eslint-config --save-dev
 ```
 
 Then create an `.eslintrc` file in your project directory:
