@@ -12,7 +12,7 @@ Then create an `.eslintrc` file in your project directory:
 
 ```json
 {
-  "extends": "@dylan"
+  "extends": "@dylanarmstrong"
 }
 ```
 
@@ -22,7 +22,7 @@ Adjust your `.eslintrc` file as necessary by adding rules:
 
 ```json
 {
-  "extends": "@dylan",
+  "extends": "@dylanarmstrong",
   "rules": {
     "no-tabs": "off"
   }
