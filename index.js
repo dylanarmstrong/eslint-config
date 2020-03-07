@@ -15,12 +15,12 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly'
   },
-  overrides: [
-    {
-      extends: ['./plugins/typescript'],
-      files: ['*.ts', '*.tsx']
-    }
-  ],
+  //overrides: [
+  //  {
+  //    extends: ['./plugins/typescript'],
+  //    files: ['*.ts', '*.tsx']
+  //  }
+  //],
   parserOptions: {
     ecmaFeatures: {
       impliedStrict: true
