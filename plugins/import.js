@@ -2,7 +2,9 @@
 let hasPlugin = true;
 try {
   // Throws an exception when not resolvable
-  require.resolve('eslint-plugin-import');
+  [
+    'eslint-plugin-import',
+  ].map((pkg) => require.resolve(pkg, { paths: ['./node-modules'] }));
 } catch (_) {
   console.warn('[@dylanarmstrong/eslint] Unable to find eslint-plugin-import.');
   hasPlugin = false;
