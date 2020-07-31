@@ -24,7 +24,7 @@ module.exports = {
     'function-paren-newline': ['error', 'multiline'],
     'generator-star-spacing': 'error',
     'grouped-accessor-pairs': ['error', 'getBeforeSet'],
-    'id-blacklist': 'off',
+    'id-denylist': 'off',
     'id-length': 'off',
     'id-match': 'off',
     'implicit-arrow-linebreak': 'error',
