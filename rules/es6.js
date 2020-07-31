@@ -3,6 +3,8 @@ module.exports = {
     'array-bracket-spacing': ['error', 'never'],
     'arrow-body-style': 'error',
     'arrow-parens': 'error',
+    'block-scoped-var': 'error',
+    'class-methods-use-this': 'error',
     'constructor-super': 'error',
     'no-class-assign': 'error',
     'no-confusing-arrow': 'error',
@@ -16,6 +18,6 @@ module.exports = {
     'prefer-object-spread': 'error',
     'prefer-template': 'error',
     'require-yield': 'error',
-    'sort-imports': 'error'
-  }
+    'sort-imports': 'error',
+  },
 };

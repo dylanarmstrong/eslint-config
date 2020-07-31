@@ -11,20 +11,20 @@ try {
 if (hasPlugin) {
   module.exports = {
     env: {
-      browser: true
+      browser: true,
     },
     extends: ['plugin:react/recommended'],
     parserOptions: {
       ecmaFeatures: {
-        jsx: true
-      }
+        jsx: true,
+      },
     },
     plugins: ['react'],
     settings: {
       react: {
-        version: 'detect'
-      }
-    }
+        version: 'detect',
+      },
+    },
   };
 } else {
   module.exports = {};
