@@ -4,9 +4,10 @@ try {
   // Throws an exception when not resolvable
   [
     'eslint-plugin-react-hooks',
+    'react',
   ].map((pkg) => require.resolve(pkg, { paths: ['./node-modules'] }));
 } catch (_) {
-  console.warn('[@dylanarmstrong/eslint] Unable to find eslint-plugin-react-hooks.');
+  console.warn('[@dylanarmstrong/eslint] Unable to find react or eslint-plugin-react-hooks.');
   hasPlugin = false;
 }
 
