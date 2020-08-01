@@ -10,7 +10,9 @@ module.exports = {
     './rules/node',
     './rules/style',
     './plugins/import',
+    './plugins/jsx-a11y',
     './plugins/react',
+    './plugins/react-hooks',
   ].map(require.resolve),
   globals: {
     Atomics: 'readonly',

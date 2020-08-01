@@ -18,6 +18,5 @@ module.exports = {
     'prefer-object-spread': 'error',
     'prefer-template': 'error',
     'require-yield': 'error',
-    'sort-imports': 'error',
   },
 };

@@ -8,7 +8,9 @@ try {
     '@typescript-eslint/parser',
   ].map((pkg) => require.resolve(pkg, { paths: ['./node-modules'] }));
 } catch (_) {
-  console.warn('[@dylanarmstrong/eslint] Unable to find typescript.');
+  console.warn(
+    '[@dylanarmstrong/eslint] Unable to find typescript, @typescript-eslint/eslint-plugin or @typescript-eslint/parser.',
+  );
   hasPlugin = false;
 }
 
