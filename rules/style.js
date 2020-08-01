@@ -6,7 +6,8 @@ module.exports = {
     'block-spacing': 'error',
     'brace-style': 'error',
     'camelcase': ['error', { 'allow': ['^UNSAFE_'] }],
-    'capitalized-comments': 'error',
+    // Sometimes you want to start a comment with the name of a variable
+    'capitalized-comments': 'off',
     'comma-dangle': ['error', 'always-multiline'],
     'comma-spacing': 'error',
     'comma-style': 'error',

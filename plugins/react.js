@@ -51,10 +51,12 @@ if (hasPlugin) {
       'react/jsx-fragments': 'error',
       'react/jsx-handler-names': 'error',
       'react/jsx-indent': ['error', 2],
-      'react/jsx-indent-props': 'error',
+      // Interferes with general indent
+      'react/jsx-indent-props': 'off',
       'react/jsx-key': 'error',
       'react/jsx-max-depth': 'error',
-      'react/jsx-max-props-per-line': 'error',
+      // max-len gives better understanding of what's the acceptable number of props
+      'react/jsx-max-props-per-line': 'off',
       'react/jsx-no-bind': 'error',
       'react/jsx-no-comment-textnodes': 'error',
       'react/jsx-no-duplicate-props': 'error',
