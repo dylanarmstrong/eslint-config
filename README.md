@@ -28,3 +28,10 @@ Adjust your `.eslintrc` file as necessary by adding rules:
   }
 }
 ```
+
+### Goal of this Project
+
+All encompassing eslint rules that can be placed on any project and have this plugin
+automatically adjust to the type of project.
+
+Secondary goal is to avoid using any recommended rule sets.
