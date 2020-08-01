@@ -1,18 +1,14 @@
+const { requires } = require('../utils');
+
 // Check for valid typescript setup
-let hasPlugin = true;
-try {
-  // Throws an exception when not resolvable
+const hasPlugin = requires(
+  'typescript',
   [
     'typescript',
     '@typescript-eslint/eslint-plugin',
     '@typescript-eslint/parser',
-  ].map((pkg) => require.resolve(pkg, { paths: ['./node-modules'] }));
-} catch (_) {
-  console.warn(
-    '[@dylanarmstrong/eslint] Unable to find typescript, @typescript-eslint/eslint-plugin or @typescript-eslint/parser.',
-  );
-  hasPlugin = false;
-}
+  ],
+);
 
 if (hasPlugin) {
   module.exports = {

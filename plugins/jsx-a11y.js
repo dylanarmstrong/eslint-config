@@ -1,14 +1,12 @@
-// Check for eslint-plugin-jsx-a11y
-let hasPlugin = true;
-try {
-  // Throws an exception when not resolvable
+const { requires } = require('../utils');
+
+// Check for valid typescript setup
+const hasPlugin = requires(
+  'jsx-a11y',
   [
     'eslint-plugin-jsx-a11y',
-  ].map((pkg) => require.resolve(pkg, { paths: ['./node-modules'] }));
-} catch (_) {
-  console.warn('[@dylanarmstrong/eslint] Unable to find eslint-plugin-jsx-a11y.');
-  hasPlugin = false;
-}
+  ],
+);
 
 if (hasPlugin) {
   module.exports = {

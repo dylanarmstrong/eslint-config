@@ -1,15 +1,13 @@
-// Check for eslint-plugin-react
-let hasPlugin = true;
-try {
-  // Throws an exception when not resolvable
+const { requires } = require('../utils');
+
+// Check for valid typescript setup
+const hasPlugin = requires(
+  'react-hooks',
   [
-    'eslint-plugin-react',
     'react',
-  ].map((pkg) => require.resolve(pkg, { paths: ['./node-modules'] }));
-} catch (_) {
-  console.warn('[@dylanarmstrong/eslint] Unable to find react or eslint-plugin-react.');
-  hasPlugin = false;
-}
+    'eslint-plugin-react',
+  ],
+);
 
 if (hasPlugin) {
   module.exports = {
