@@ -8,8 +8,9 @@ const hasPlugin = requires(
   ],
 );
 
+let moduleExports = {};
 if (hasPlugin) {
-  module.exports = {
+  moduleExports = {
     env: {
       browser: true,
     },
@@ -23,6 +24,6 @@ if (hasPlugin) {
     rules: {
     },
   };
-} else {
-  module.exports = {};
 }
+
+module.exports = moduleExports;

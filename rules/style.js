@@ -61,7 +61,7 @@ module.exports = {
     'quotes': ['error', 'single'],
     // This rule is wonky with single combined with multiple
     'sort-imports': 'off',
-    'sort-keys': 'error',
-    'sort-vars': 'error',
+    'sort-keys': 'warn',
+    'sort-vars': 'warn',
   },
 };

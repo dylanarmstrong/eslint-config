@@ -1,16 +1,30 @@
 const { requires } = require('../utils');
 
-// Check for valid typescript setup
+// Check for valid react setup
 const hasPlugin = requires(
-  'react-hooks',
+  'react',
   [
     'react',
     'eslint-plugin-react',
   ],
 );
 
+let moduleExports = {};
 if (hasPlugin) {
-  module.exports = {
+  // eslint-disable-next-line global-require
+  const React = require('react');
+  let version = 'detect';
+  let requireReactInScope = true;
+  // React > 17 doesn't require React to be imported
+  if (Object.hasOwnProperty.call(React, 'version')) {
+    ({ version } = React);
+    const n = Number.parseFloat(version);
+    if (n > 16) {
+      requireReactInScope = false;
+    }
+  }
+
+  moduleExports = {
     env: {
       browser: true,
     },
@@ -30,7 +44,9 @@ if (hasPlugin) {
       'react/forbid-dom-props': 'off',
       'react/forbid-elements': 'off',
       'react/forbid-foreign-prop-types': 'error',
-      'react/forbid-prop-types': 'off',
+      'react/forbid-prop-types': ['error', {
+        forbid: ['any', 'array', 'object'],
+      }],
       'react/function-component-definition': [
         'error',
         {
@@ -54,7 +70,7 @@ if (hasPlugin) {
       // Interferes with general indent
       'react/jsx-indent-props': 'off',
       'react/jsx-key': 'error',
-      'react/jsx-max-depth': 'error',
+      'react/jsx-max-depth': 'off',
       // max-len gives better understanding of what's the acceptable number of props
       'react/jsx-max-props-per-line': 'off',
       'react/jsx-no-bind': 'error',
@@ -109,7 +125,7 @@ if (hasPlugin) {
       'react/prefer-read-only-props': 'error',
       'react/prefer-stateless-function': ['error', { 'ignorePureComponents': true }],
       'react/prop-types': 'error',
-      'react/react-in-jsx-scope': 'error',
+      'react/react-in-jsx-scope': requireReactInScope ? 'error' : 'off',
       'react/require-default-props': 'error',
       'react/require-optimization': 'off',
       'react/require-render-return': 'error',
@@ -123,10 +139,10 @@ if (hasPlugin) {
     },
     settings: {
       react: {
-        version: 'detect',
+        version,
       },
     },
   };
-} else {
-  module.exports = {};
 }
+
+module.exports = moduleExports;

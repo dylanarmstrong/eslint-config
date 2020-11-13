@@ -1,7 +1,7 @@
 {
   "name": "@dylanarmstrong/eslint-config",
   "description": "Dylan Armstrong's preferred ESLint rules",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "keywords": [
     "eslint",
     "eslint-config"

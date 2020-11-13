@@ -10,8 +10,9 @@ const hasPlugin = requires(
   ],
 );
 
+let moduleExports = {};
 if (hasPlugin) {
-  module.exports = {
+  moduleExports = {
     extends: ['plugin:@typescript-eslint/recommended'],
     parserOptions: {
       ecmaFeatures: {
@@ -23,6 +24,6 @@ if (hasPlugin) {
     rules: {
     },
   };
-} else {
-  module.exports = {};
 }
+
+module.exports = moduleExports;

@@ -1,6 +1,6 @@
 const { requires } = require('../utils');
 
-// Check for valid typescript setup
+// Check for valid react-hooks setup
 const hasPlugin = requires(
   'react-hooks',
   [
@@ -9,12 +9,12 @@ const hasPlugin = requires(
   ],
 );
 
+let moduleExports = {};
 if (hasPlugin) {
-  module.exports = {
+  moduleExports = {
     env: {
       browser: true,
     },
-    extends: ['plugin:react-hooks/recommended'],
     parserOptions: {
       ecmaFeatures: {
         jsx: true,
@@ -22,8 +22,10 @@ if (hasPlugin) {
     },
     plugins: ['react-hooks'],
     rules: {
+      'react-hooks/exhaustive-deps': 'error',
+      'react-hooks/rules-of-hooks': 'error',
     },
   };
-} else {
-  module.exports = {};
 }
+
+module.exports = moduleExports;
