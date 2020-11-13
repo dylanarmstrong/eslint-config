@@ -63,7 +63,7 @@ if (hasPlugin) {
       'import/no-useless-path-segments': 'error',
       'import/no-webpack-loader-syntax': 'error',
       'import/order': 'off',
-      'import/prefer-default-export': 'error',
+      'import/prefer-default-export': 'off',
       'import/unambiguous': 'off',
     },
     settings: {
