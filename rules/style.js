@@ -63,5 +63,20 @@ module.exports = {
     'sort-imports': 'off',
     'sort-keys': 'warn',
     'sort-vars': 'warn',
+    'spaced-comment': [
+      'error',
+      'always',
+      {
+        'markers': [
+          '/',
+        ],
+      },
+    ],
+    'switch-colon-spacing': 'error',
+    'template-curly-spacing': ['error', 'never'],
+    'template-tag-spacing': ['error', 'never'],
+    'vars-on-top': 'off',
+    'wrap-regex': 'off',
+    'yield-star-spacing': ['error', 'after'],
   },
 };

@@ -18,6 +18,7 @@ const requires = (name, pkgs) => {
 
   const checkedPkgs = pkgs.map(check).filter(Boolean);
   if (checkedPkgs.length > 0) {
+    // eslint-disable-next-line no-console
     console.warn(
       `${chalk.blue('[@dylanarmstrong/eslint]')} Disabling ${chalk.red(name)}: Unable to find ${checkedPkgs.join(', ')}.`,
     );
