@@ -58,7 +58,7 @@ module.exports = {
     'no-unneeded-ternary': 'error',
     'object-curly-spacing': ['error', 'always'],
     'one-var-declaration-per-line': 'error',
-    'quotes': ['error', 'single'],
+    'quotes': ['error', 'single', { 'avoidEscape': true }],
     // This rule is wonky with single combined with multiple
     'sort-imports': 'off',
     'sort-keys': 'warn',
