@@ -1,6 +1,10 @@
 module.exports = {
   extends: [
-    './index.js',
+    './lib/index.js',
   ],
   root: true,
+  rules: {
+    'import/no-mutable-exports': 'off',
+    'import/no-unused-modules': 'off',
+  },
 };
