@@ -1,6 +1,8 @@
 import path from 'path';
 import { createRequire } from 'module';
 
+import { hasTypescript } from './utils';
+
 const env = {
   es6: true,
   node: true,
@@ -26,12 +28,13 @@ const globals = {
   SharedArrayBuffer: 'readonly',
 };
 
-const overrides = [
+// Check for valid typescript setup
+const overrides = hasTypescript() ? [
   {
     extends: ['./plugins/typescript'],
     files: ['**/*.ts?(x)'],
   },
-];
+] : [];
 
 const parserOptions = {
   ecmaFeatures: {
