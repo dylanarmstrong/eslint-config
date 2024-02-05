@@ -12,11 +12,7 @@ const req = createRequire(path.join(__dirname, 'src'));
 const mapFile = (file: string) => req.resolve(file);
 
 const exts = [
-  './rules/common',
-  './rules/errors',
-  './rules/es6',
-  './rules/node',
-  './rules/style',
+  './rules/builtin',
   './plugins/import',
   './plugins/jsx-a11y',
   './plugins/react',

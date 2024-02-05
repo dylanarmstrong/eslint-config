@@ -26,12 +26,10 @@ if (hasPlugin) {
   plugins = ['@typescript-eslint'];
 
   rules = {
-    '@typescript-eslint/no-duplicate-imports': 'error',
     '@typescript-eslint/no-unused-vars': ['error', {
       argsIgnorePattern: '^_$',
       varsIgnorePattern: '^_$',
     }],
-    'no-duplicate-imports': 'off',
     'no-unused-vars': 'off',
   };
 }

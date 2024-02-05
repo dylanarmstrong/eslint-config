@@ -2,7 +2,7 @@
 
 ### Installation
 
-Install with `npm` (or `yarn`):
+Install with `npm` (or `yarn` / `pnpm`):
 
 ```bash
 npm i @dylanarmstrong/eslint-config --save-dev
