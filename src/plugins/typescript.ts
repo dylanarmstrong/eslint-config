@@ -18,7 +18,7 @@ if (hasPlugin) {
     ecmaVersion: 11,
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
-    warnOnUnsupportedTypeScriptVersion: true,
+    warnOnUnsupportedTypeScriptVersion: false,
   };
 
   plugins = ['@typescript-eslint'];
