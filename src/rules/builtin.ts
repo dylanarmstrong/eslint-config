@@ -30,7 +30,7 @@ const rules = {
   'default-case-last': 'error',
   'default-param-last': 'error',
   'dot-location': ['error', 'property'],
-  'dot-notation': 'error',
+  'dot-notation': 'off',
   'eol-last': 'error',
   'eqeqeq': 'error',
   'for-direction': 'error',

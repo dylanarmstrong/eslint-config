@@ -30,6 +30,7 @@ if (hasPlugin) {
       argsIgnorePattern: '^_$',
       varsIgnorePattern: '^_$',
     }],
+    'no-duplicate-imports': 'off',
     'no-unused-vars': 'off',
   };
 }

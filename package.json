@@ -45,5 +45,5 @@
     "lint": "eslint src",
     "unused": "eslint-find-rules --unused"
   },
-  "version": "0.5.0"
+  "version": "0.5.1"
 }
