@@ -17,6 +17,7 @@ const exts = [
   './plugins/jsx-a11y',
   './plugins/react',
   './plugins/react-hooks',
+  './plugins/prettier',
 ].map(mapFile);
 
 const globals = {
@@ -25,12 +26,14 @@ const globals = {
 };
 
 // Check for valid typescript setup
-const overrides = hasTypescript() ? [
-  {
-    extends: ['./plugins/typescript'],
-    files: ['**/*.ts?(x)'],
-  },
-] : [];
+const overrides = hasTypescript()
+  ? [
+      {
+        extends: ['./plugins/typescript'],
+        files: ['**/*.ts?(x)'],
+      },
+    ]
+  : [];
 
 const parserOptions = {
   ecmaFeatures: {
@@ -40,10 +43,4 @@ const parserOptions = {
   sourceType: 'module',
 };
 
-export {
-  env,
-  exts as extends,
-  globals,
-  overrides,
-  parserOptions,
-};
+export { env, exts as extends, globals, overrides, parserOptions };

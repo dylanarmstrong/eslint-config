@@ -13,12 +13,14 @@
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.20.0",
     "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-find-rules": "^4.1.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.2.5",
     "react": "^18.2.0",
     "typescript": "^5.3.3"
   },
@@ -36,13 +38,17 @@
   "peerDependencies": {
     "eslint": "^8.56.0"
   },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/dylanarmstrong/eslint-config"
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint src",
+    "lint": "prettier --write --ignore-unknown src/ && eslint src/",
     "unused": "eslint-find-rules --unused"
   },
   "version": "0.5.1"

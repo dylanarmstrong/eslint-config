@@ -1,42 +1,24 @@
-import {
-  hasTypescript as checkHasTypescript,
-  requires,
-} from '../utils';
+import { hasTypescript as checkHasTypescript, requires } from '../utils';
 
 // Check for valid import setup
 const hasTypescript = checkHasTypescript(true);
 
 let hasPlugin = false;
 if (hasTypescript) {
-  hasPlugin = requires(
-    'import',
-    [
-      'eslint-plugin-import',
-      // Typescript requires this plugin as well
-      'eslint-import-resolver-typescript',
-    ],
-  );
+  hasPlugin = requires('import', [
+    'eslint-plugin-import',
+    // Typescript requires this plugin as well
+    'eslint-import-resolver-typescript',
+  ]);
 } else {
-  hasPlugin = requires(
-    'import',
-    [
-      'eslint-plugin-import',
-    ],
-  );
+  hasPlugin = requires('import', ['eslint-plugin-import']);
 }
 
 let plugins;
 let rules;
 let settings;
 if (hasPlugin) {
-  const all = [
-    '.d.ts',
-    '.js',
-    '.json',
-    '.jsx',
-    '.ts',
-    '.tsx',
-  ];
+  const all = ['.d.ts', '.js', '.json', '.jsx', '.ts', '.tsx'];
 
   plugins = ['import'];
 
@@ -77,10 +59,13 @@ if (hasPlugin) {
     'import/no-self-import': 'error',
     'import/no-unassigned-import': 'off',
     'import/no-unresolved': 'error',
-    'import/no-unused-modules': ['error', {
-      missingExports: false,
-      unusedExports: true,
-    }],
+    'import/no-unused-modules': [
+      'error',
+      {
+        missingExports: false,
+        unusedExports: true,
+      },
+    ],
     'import/no-useless-path-segments': 'error',
     'import/no-webpack-loader-syntax': 'error',
     'import/order': 'off',
@@ -105,8 +90,4 @@ if (hasPlugin) {
   };
 }
 
-export {
-  plugins,
-  rules,
-  settings,
-};
+export { plugins, rules, settings };

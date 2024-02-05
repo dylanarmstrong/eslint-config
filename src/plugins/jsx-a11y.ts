@@ -1,12 +1,7 @@
 import { requires } from '../utils';
 
 // Check for valid typescript setup
-const hasPlugin = requires(
-  'jsx-a11y',
-  [
-    'eslint-plugin-jsx-a11y',
-  ],
-);
+const hasPlugin = requires('jsx-a11y', ['eslint-plugin-jsx-a11y']);
 
 let env;
 let exts;
@@ -32,10 +27,4 @@ if (hasPlugin) {
   rules = {};
 }
 
-export {
-  env,
-  exts as extends,
-  parserOptions,
-  plugins,
-  rules,
-};
+export { env, exts as extends, parserOptions, plugins, rules };

@@ -4,13 +4,7 @@ import { createRequire } from 'module';
 import { requires } from '../utils';
 
 // Check for valid react setup
-const hasPlugin = requires(
-  'react',
-  [
-    'react',
-    'eslint-plugin-react',
-  ],
-);
+const hasPlugin = requires('react', ['react', 'eslint-plugin-react']);
 
 let env;
 let parserOptions;
@@ -54,9 +48,12 @@ if (hasPlugin) {
     'react/forbid-dom-props': 'off',
     'react/forbid-elements': 'off',
     'react/forbid-foreign-prop-types': 'error',
-    'react/forbid-prop-types': ['error', {
-      forbid: ['any', 'array', 'object'],
-    }],
+    'react/forbid-prop-types': [
+      'error',
+      {
+        forbid: ['any', 'array', 'object'],
+      },
+    ],
     'react/function-component-definition': [
       'error',
       {
@@ -132,7 +129,10 @@ if (hasPlugin) {
     'react/no-will-update-set-state': 'error',
     'react/prefer-es6-class': 'error',
     'react/prefer-read-only-props': 'error',
-    'react/prefer-stateless-function': ['error', { ignorePureComponents: true }],
+    'react/prefer-stateless-function': [
+      'error',
+      { ignorePureComponents: true },
+    ],
     'react/prop-types': 'error',
     'react/react-in-jsx-scope': requireReactInScope ? 'error' : 'off',
     'react/require-default-props': 'error',
@@ -155,10 +155,4 @@ if (hasPlugin) {
   };
 }
 
-export {
-  env,
-  parserOptions,
-  plugins,
-  rules,
-  settings,
-};
+export { env, parserOptions, plugins, rules, settings };

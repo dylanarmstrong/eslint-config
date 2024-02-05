@@ -17,9 +17,7 @@ const hasTypescript = (quiet = false): boolean => {
 
   if (ret) {
     try {
-      fs.accessSync(
-        path.join(process.cwd(), 'tsconfig.json'),
-      );
+      fs.accessSync(path.join(process.cwd(), 'tsconfig.json'));
       ret = true;
     } catch (e) {
       ret = false;

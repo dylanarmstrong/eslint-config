@@ -9,9 +9,7 @@ let plugins;
 let rules;
 
 if (hasPlugin) {
-  exts = [
-    'plugin:@typescript-eslint/recommended',
-  ];
+  exts = ['plugin:@typescript-eslint/recommended'];
 
   parserOptions = {
     ecmaFeatures: {
@@ -26,18 +24,16 @@ if (hasPlugin) {
   plugins = ['@typescript-eslint'];
 
   rules = {
-    '@typescript-eslint/no-unused-vars': ['error', {
-      argsIgnorePattern: '^_$',
-      varsIgnorePattern: '^_$',
-    }],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_$',
+        varsIgnorePattern: '^_$',
+      },
+    ],
     'no-duplicate-imports': 'off',
     'no-unused-vars': 'off',
   };
 }
 
-export {
-  exts as extends,
-  parserOptions,
-  plugins,
-  rules,
-};
+export { exts as extends, parserOptions, plugins, rules };

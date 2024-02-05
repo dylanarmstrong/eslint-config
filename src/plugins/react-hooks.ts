@@ -1,13 +1,10 @@
 import { requires } from '../utils';
 
 // Check for valid react-hooks setup
-const hasPlugin = requires(
-  'react-hooks',
-  [
-    'react',
-    'eslint-plugin-react-hooks',
-  ],
-);
+const hasPlugin = requires('react-hooks', [
+  'react',
+  'eslint-plugin-react-hooks',
+]);
 
 let env;
 let parserOptions;
@@ -33,9 +30,4 @@ if (hasPlugin) {
   };
 }
 
-export {
-  env,
-  parserOptions,
-  plugins,
-  rules,
-};
+export { env, parserOptions, plugins, rules };

@@ -9,7 +9,7 @@ const rules = {
   'block-scoped-var': 'error',
   'block-spacing': 'error',
   'brace-style': 'error',
-  'camelcase': [
+  camelcase: [
     'error',
     {
       allow: ['^UNSAFE_'],
@@ -20,19 +20,19 @@ const rules = {
   'comma-dangle': ['error', 'always-multiline'],
   'comma-spacing': 'error',
   'comma-style': 'error',
-  'complexity': 'error',
+  complexity: 'error',
   'computed-property-spacing': 'error',
   'consistent-return': 'error',
   'consistent-this': 'off',
   'constructor-super': 'error',
-  'curly': 'error',
+  curly: 'error',
   'default-case': 'error',
   'default-case-last': 'error',
   'default-param-last': 'error',
   'dot-location': ['error', 'property'],
   'dot-notation': 'off',
   'eol-last': 'error',
-  'eqeqeq': 'error',
+  eqeqeq: 'error',
   'for-direction': 'error',
   'func-call-spacing': 'error',
   'func-name-matching': 'off',
@@ -49,7 +49,7 @@ const rules = {
   'id-length': 'off',
   'id-match': 'off',
   'implicit-arrow-linebreak': 'error',
-  'indent': [
+  indent: [
     'error',
     2,
     {
@@ -195,7 +195,7 @@ const rules = {
   'prefer-object-spread': 'error',
   'prefer-template': 'error',
   'quote-props': ['error', 'consistent-as-needed'],
-  'quotes': [
+  quotes: [
     'error',
     'single',
     {
@@ -204,7 +204,7 @@ const rules = {
   ],
   'require-atomic-updates': 'error',
   'require-yield': 'error',
-  'semi': ['error', 'always'],
+  semi: ['error', 'always'],
   'semi-style': 'error',
   'sort-imports': 'off',
   'sort-keys': 'warn',
@@ -216,7 +216,7 @@ const rules = {
       markers: ['/'],
     },
   ],
-  'strict': 'error',
+  strict: 'error',
   'switch-colon-spacing': 'error',
   'symbol-description': 'error',
   'template-curly-spacing': ['error', 'never'],
@@ -228,7 +228,7 @@ const rules = {
   'wrap-iife': ['error', 'inside'],
   'wrap-regex': 'off',
   'yield-star-spacing': ['error', 'after'],
-  'yoda': 'error',
+  yoda: 'error',
 };
 
 export { rules };
