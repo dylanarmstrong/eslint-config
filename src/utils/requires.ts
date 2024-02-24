@@ -1,13 +1,13 @@
 import chalk from 'chalk';
-import path from 'path';
-import { createRequire } from 'module';
+import path from 'node:path';
+import { createRequire } from 'node:module';
 
-const check = (pkg: string) => {
+const check = (package_: string): string | undefined => {
   try {
     const require = createRequire(path.join(__dirname, 'node_modules'));
-    require.resolve(pkg, { paths: ['./node_modules'] });
-  } catch (_) {
-    return pkg;
+    require.resolve(package_, { paths: ['./node_modules'] });
+  } catch {
+    return package_;
   }
   return undefined;
 };
@@ -19,7 +19,7 @@ const requires = (name: string, pkgs: string[], quiet = false) => {
     return checked[name];
   }
 
-  const checkedPkgs = pkgs.map(check).filter(Boolean);
+  const checkedPkgs = pkgs.map((package_) => check(package_)).filter(Boolean);
   if (checkedPkgs.length > 0) {
     if (!quiet) {
       // eslint-disable-next-line no-console

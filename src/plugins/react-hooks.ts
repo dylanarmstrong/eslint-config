@@ -6,13 +6,13 @@ const hasPlugin = requires('react-hooks', [
   'eslint-plugin-react-hooks',
 ]);
 
-let env;
+let environment;
 let parserOptions;
 let plugins;
 let rules;
 
 if (hasPlugin) {
-  env = {
+  environment = {
     browser: true,
   };
 
@@ -30,4 +30,4 @@ if (hasPlugin) {
   };
 }
 
-export { env, parserOptions, plugins, rules };
+export { environment as env, parserOptions, plugins, rules };

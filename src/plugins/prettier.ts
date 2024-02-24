@@ -3,10 +3,10 @@ import { requires } from '../utils';
 // Check for valid prettier setup
 const hasPlugin = requires('prettier', ['prettier', 'eslint-config-prettier']);
 
-let exts;
+let extensions;
 
 if (hasPlugin) {
-  exts = ['prettier'];
+  extensions = ['prettier'];
 }
 
-export { exts as extends };
+export { extensions as extends };

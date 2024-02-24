@@ -3,13 +3,13 @@ import { hasTypescript } from '../utils';
 // Check for valid typescript setup
 const hasPlugin = hasTypescript();
 
-let exts;
+let extensions;
 let parserOptions;
 let plugins;
 let rules;
 
 if (hasPlugin) {
-  exts = ['plugin:@typescript-eslint/recommended'];
+  extensions = ['plugin:@typescript-eslint/recommended'];
 
   parserOptions = {
     ecmaFeatures: {
@@ -36,4 +36,4 @@ if (hasPlugin) {
   };
 }
 
-export { exts as extends, parserOptions, plugins, rules };
+export { extensions as extends, parserOptions, plugins, rules };

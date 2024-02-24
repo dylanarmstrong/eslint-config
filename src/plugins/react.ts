@@ -1,12 +1,12 @@
-import path from 'path';
-import { createRequire } from 'module';
+import path from 'node:path';
+import { createRequire } from 'node:module';
 
 import { requires } from '../utils';
 
 // Check for valid react setup
 const hasPlugin = requires('react', ['react', 'eslint-plugin-react']);
 
-let env;
+let environment;
 let parserOptions;
 let plugins;
 let rules;
@@ -26,7 +26,7 @@ if (hasPlugin) {
     }
   }
 
-  env = {
+  environment = {
     browser: true,
   };
 
@@ -155,4 +155,4 @@ if (hasPlugin) {
   };
 }
 
-export { env, parserOptions, plugins, rules, settings };
+export { environment as env, parserOptions, plugins, rules, settings };

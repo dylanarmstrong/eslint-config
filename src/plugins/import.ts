@@ -3,16 +3,13 @@ import { hasTypescript as checkHasTypescript, requires } from '../utils';
 // Check for valid import setup
 const hasTypescript = checkHasTypescript(true);
 
-let hasPlugin = false;
-if (hasTypescript) {
-  hasPlugin = requires('import', [
-    'eslint-plugin-import',
-    // Typescript requires this plugin as well
-    'eslint-import-resolver-typescript',
-  ]);
-} else {
-  hasPlugin = requires('import', ['eslint-plugin-import']);
-}
+const hasPlugin = hasTypescript
+  ? requires('import', [
+      'eslint-plugin-import',
+      // Typescript requires this plugin as well
+      'eslint-import-resolver-typescript',
+    ])
+  : requires('import', ['eslint-plugin-import']);
 
 let plugins;
 let rules;

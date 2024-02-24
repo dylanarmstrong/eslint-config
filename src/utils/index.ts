@@ -1,4 +1,2 @@
-import requires from './requires';
-import hasTypescript from './hasTypescript';
-
-export { hasTypescript, requires };
+export { default as requires } from './requires';
+export { default as hasTypescript } from './has-typescript';

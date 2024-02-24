@@ -1,24 +1,26 @@
-import path from 'path';
-import { createRequire } from 'module';
+import path from 'node:path';
+import { createRequire } from 'node:module';
 
 import { hasTypescript } from './utils';
 
-const env = {
+const environment = {
   es6: true,
   node: true,
 };
 
-const req = createRequire(path.join(__dirname, 'src'));
-const mapFile = (file: string) => req.resolve(file);
+const request = createRequire(path.join(__dirname, 'src'));
+const mapFile = (file: string) => request.resolve(file);
 
-const exts = [
+const extensions = [
   './rules/builtin',
   './plugins/import',
   './plugins/jsx-a11y',
   './plugins/react',
   './plugins/react-hooks',
+  './plugins/unicorn',
+  // Prettier must be last
   './plugins/prettier',
-].map(mapFile);
+].map((file) => mapFile(file));
 
 const globals = {
   Atomics: 'readonly',
@@ -43,4 +45,10 @@ const parserOptions = {
   sourceType: 'module',
 };
 
-export { env, exts as extends, globals, overrides, parserOptions };
+export {
+  environment as env,
+  extensions as extends,
+  globals,
+  overrides,
+  parserOptions,
+};

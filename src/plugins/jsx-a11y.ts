@@ -3,18 +3,18 @@ import { requires } from '../utils';
 // Check for valid typescript setup
 const hasPlugin = requires('jsx-a11y', ['eslint-plugin-jsx-a11y']);
 
-let env;
-let exts;
+let environment;
+let extensions;
 let parserOptions;
 let plugins;
 let rules;
 
 if (hasPlugin) {
-  env = {
+  environment = {
     browser: true,
   };
 
-  exts = ['plugin:jsx-a11y/recommended'];
+  extensions = ['plugin:jsx-a11y/recommended'];
 
   parserOptions = {
     ecmaFeatures: {
@@ -27,4 +27,10 @@ if (hasPlugin) {
   rules = {};
 }
 
-export { env, exts as extends, parserOptions, plugins, rules };
+export {
+  environment as env,
+  extensions as extends,
+  parserOptions,
+  plugins,
+  rules,
+};
