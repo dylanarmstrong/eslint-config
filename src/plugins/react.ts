@@ -69,7 +69,10 @@ if (hasPlugin) {
     'react/jsx-curly-newline': 'error',
     'react/jsx-curly-spacing': 'error',
     'react/jsx-equals-spacing': 'error',
-    'react/jsx-filename-extension': 'error',
+    'react/jsx-filename-extension': ['error', {
+      allow: 'as-needed',
+      extensions: ['.jsx', '.tsx'],
+    }],
     'react/jsx-first-prop-new-line': 'error',
     'react/jsx-fragments': 'error',
     'react/jsx-handler-names': 'error',

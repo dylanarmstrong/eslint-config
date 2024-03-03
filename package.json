@@ -52,5 +52,5 @@
     "lint": "prettier --write --ignore-unknown .eslintrc.js src/ && eslint --fix src/",
     "unused": "eslint-find-rules --unused"
   },
-  "version": "0.6.0"
+  "version": "0.6.1"
 }
