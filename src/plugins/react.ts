@@ -1,5 +1,5 @@
-import path from 'node:path';
 import { createRequire } from 'node:module';
+import path from 'node:path';
 
 import { requires } from '../utils';
 
@@ -69,10 +69,13 @@ if (hasPlugin) {
     'react/jsx-curly-newline': 'error',
     'react/jsx-curly-spacing': 'error',
     'react/jsx-equals-spacing': 'error',
-    'react/jsx-filename-extension': ['error', {
-      allow: 'as-needed',
-      extensions: ['.jsx', '.tsx'],
-    }],
+    'react/jsx-filename-extension': [
+      'error',
+      {
+        allow: 'as-needed',
+        extensions: ['.jsx', '.tsx'],
+      },
+    ],
     'react/jsx-first-prop-new-line': 'error',
     'react/jsx-fragments': 'error',
     'react/jsx-handler-names': 'error',

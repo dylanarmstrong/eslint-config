@@ -65,7 +65,23 @@ if (hasPlugin) {
     ],
     'import/no-useless-path-segments': 'error',
     'import/no-webpack-loader-syntax': 'error',
-    'import/order': 'off',
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          caseInsensitive: true,
+          order: 'asc',
+        },
+        groups: [
+          ['builtin', 'external'],
+          ['internal'],
+          ['parent', 'sibling', 'index'],
+          ['object'],
+          ['type'],
+        ],
+        'newlines-between': 'always',
+      },
+    ],
     'import/prefer-default-export': 'off',
     'import/unambiguous': 'off',
   };

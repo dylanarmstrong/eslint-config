@@ -1,6 +1,6 @@
 import chalk from 'chalk';
-import path from 'node:path';
 import { createRequire } from 'node:module';
+import path from 'node:path';
 
 const check = (package_: string): string | undefined => {
   try {

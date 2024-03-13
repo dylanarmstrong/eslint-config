@@ -206,7 +206,12 @@ const rules = {
   'require-yield': 'error',
   semi: ['error', 'always'],
   'semi-style': 'error',
-  'sort-imports': 'off',
+  'sort-imports': [
+    'error',
+    {
+      ignoreDeclarationSort: true,
+    },
+  ],
   'sort-keys': 'warn',
   'sort-vars': 'warn',
   'spaced-comment': [
