@@ -2,31 +2,35 @@
 
 ### Installation
 
-Install with `npm` (or `yarn` / `pnpm`):
+Install with `pnpm` (or `npm` / `yarn`):
 
 ```bash
-npm i @dylanarmstrong/eslint-config --save-dev
+pnpm add @dylanarmstrong/eslint-config --save-dev
 ```
 
-Then create an `.eslintrc` file in your project directory:
+Then create an `eslint.config.js` file in your project directory:
 
-```json
+```js
 {
-  "extends": "@dylanarmstrong"
+  export { default } from '@dylanarmstrong/eslint-config';
 }
 ```
 
 ### Configuring
 
-Adjust your `.eslintrc` file as necessary by adding rules:
+Adjust your `eslint.config.js` file as necessary by adding rules:
 
-```json
-{
-  "extends": "@dylanarmstrong",
-  "rules": {
-    "no-tabs": "off"
-  }
-}
+```js
+import eslint from '@dylanarmstrong/eslint-config';
+
+export default [
+  ...eslint,
+  {
+    rules: {
+      camelcase: 'off',
+    },
+  },
+];
 ```
 
 ### Goal of this Project
@@ -35,3 +39,7 @@ All encompassing eslint rules that can be placed on any project and have this pl
 automatically adjust to the type of project.
 
 Secondary goal is to avoid using any recommended rule sets.
+
+### Notes
+
+After version 0.7, flat config and `eslint@9` is required.

@@ -1,3 +1,15 @@
+import type { FlatConfig } from '../types.js';
+import requires from '../utils/requires.js';
+
+const hasPlugin = requires('@eslint/js', ['@eslint/js']);
+
+let config: undefined | FlatConfig;
+
+if (hasPlugin) {
+  const plugin = await import('@eslint/js');
+  config = plugin.default.configs.recommended;
+}
+
 const rules = {
   'accessor-pairs': 'error',
   'array-bracket-spacing': ['error', 'never'],
@@ -236,4 +248,4 @@ const rules = {
   yoda: 'error',
 };
 
-export { rules };
+export default [config, { rules }].filter(Boolean);
