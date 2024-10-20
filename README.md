@@ -11,9 +11,7 @@ pnpm add @dylanarmstrong/eslint-config --save-dev
 Then create an `eslint.config.js` file in your project directory:
 
 ```js
-{
-  export { default } from '@dylanarmstrong/eslint-config';
-}
+export { default } from '@dylanarmstrong/eslint-config';
 ```
 
 ### Configuring
