@@ -1,54 +1,27 @@
-import { createRequire } from 'node:module';
-import path from 'node:path';
+// import { createRequire } from 'node:module';
+// import path from 'node:path';
 
-import { hasTypescript } from './utils';
+import { default as builtin } from './rules/builtin.js';
+import { default as prettier } from './rules/prettier.js';
+import { default as jsxA11y } from './rules/jsx-a11y.js';
+import { default as typescript } from './rules/typescript.js';
+import { default as unicorn } from './rules/unicorn.js';
+import { default as react } from './rules/react.js';
+import { default as reactHooks } from './rules/react-hooks.js';
 
-const environment = {
-  es6: true,
-  node: true,
-};
+// const extensions = [
+//   './plugins/import',
+//   './plugins/jsx-a11y',
+//   './plugins/react',
+//   './plugins/react-hooks',
+// ].map((file) => mapFile(file));
 
-const request = createRequire(path.join(__dirname, 'src'));
-const mapFile = (file: string) => request.resolve(file);
-
-const extensions = [
-  './rules/builtin',
-  './plugins/import',
-  './plugins/jsx-a11y',
-  './plugins/react',
-  './plugins/react-hooks',
-  './plugins/unicorn',
-  // Prettier must be last
-  './plugins/prettier',
-].map((file) => mapFile(file));
-
-const globals = {
-  Atomics: 'readonly',
-  SharedArrayBuffer: 'readonly',
-};
-
-// Check for valid typescript setup
-const overrides = hasTypescript()
-  ? [
-      {
-        extends: ['./plugins/typescript'],
-        files: ['**/*.ts?(x)'],
-      },
-    ]
-  : [];
-
-const parserOptions = {
-  ecmaFeatures: {
-    impliedStrict: true,
-  },
-  ecmaVersion: 11,
-  sourceType: 'module',
-};
-
-export {
-  environment as env,
-  extensions as extends,
-  globals,
-  overrides,
-  parserOptions,
-};
+export default [
+  builtin,
+  typescript.valid ? typescript.config : {},
+  react.valid ? react.config : {},
+  reactHooks.valid ? reactHooks.config : {},
+  jsxA11y.valid ? jsxA11y.config : {},
+  unicorn.valid ? unicorn.config : {},
+  prettier.valid ? prettier.config : {},
+].flat();
