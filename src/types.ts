@@ -15,11 +15,14 @@ type FlatConfig = Partial<{
         sourceType: string;
       }>
     | {
-        parserOptions: {
-          ecmaFeatures: {
+        parserOptions: Partial<{
+          ecmaFeatures: Partial<{
+            globalReturn: boolean;
+            impliedStrict: boolean;
+            experimentalObjectRestSpread: boolean;
             jsx: boolean;
-          };
-        };
+          }>;
+        }>;
       };
   name: string;
   plugins: {

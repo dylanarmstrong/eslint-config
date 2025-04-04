@@ -10,7 +10,6 @@ const hasPlugin = requires('react-hooks', [
 let config: undefined | FlatConfig;
 
 if (hasPlugin) {
-  // @ts-expect-error, no types available yet
   const plugin = await import('eslint-plugin-react-hooks');
 
   config = {

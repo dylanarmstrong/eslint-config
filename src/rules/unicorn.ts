@@ -8,7 +8,7 @@ let config: undefined | FlatConfig;
 
 if (hasPlugin) {
   const plugin = await import('eslint-plugin-unicorn');
-  config = plugin.configs['flat/recommended'];
+  config = plugin.default.configs.recommended;
 
   if (config.rules) {
     // Vite environment file cannot be renamed
