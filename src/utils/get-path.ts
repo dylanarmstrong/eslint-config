@@ -6,7 +6,7 @@ const getPath = (package_: string): string | undefined => {
     const __dirname = import.meta.dirname;
     const require = createRequire(path.join(__dirname, 'node_modules'));
     const resolvedPath = require.resolve(package_, {
-      paths: ['./node_modules'],
+      paths: [path.join('.', 'node_modules')],
     });
     return resolvedPath;
   } catch {
