@@ -1,11 +1,12 @@
 import requires from '../utils/requires.js';
-import type { FlatConfig } from '../types.js';
+import type { PossibleRuleModule } from '../types.js';
 import { getPath } from '../utils/get-path.js';
+import { addValid } from '../utils/add-valid.js';
 
 // Check for valid react setup
 const hasPlugin = requires('react', ['react', 'eslint-plugin-react']);
 
-let config: undefined | FlatConfig[];
+let configs: undefined | PossibleRuleModule[];
 
 const reactPath = getPath('react');
 if (hasPlugin && reactPath) {
@@ -22,19 +23,23 @@ if (hasPlugin && reactPath) {
     }
   }
 
-  config = [
-    plugin.default.configs.flat?.['recommended'] ?? {},
-    requireJsxRuntime
-      ? (plugin.default.configs.flat?.['jsx-runtime'] ?? {})
-      : {},
+  configs = [
+    { config: plugin.default.configs.flat?.['recommended'] },
     {
-      settings: {
-        react: {
-          version,
+      config: requireJsxRuntime
+        ? plugin.default.configs.flat?.['jsx-runtime']
+        : undefined,
+    },
+    {
+      config: {
+        settings: {
+          react: {
+            version,
+          },
         },
       },
     },
   ];
 }
 
-export default { config, valid: config !== undefined };
+export default addValid(configs);

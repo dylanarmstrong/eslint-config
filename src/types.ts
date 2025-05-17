@@ -36,4 +36,14 @@ type FlatConfig = Partial<{
   }>;
 }>;
 
-export type { FlatConfig };
+type RuleModule = {
+  config: FlatConfig;
+  valid: boolean;
+};
+
+type PossibleRuleModule =
+  | Omit<RuleModule, 'valid'>
+  | { config: undefined }
+  | undefined;
+
+export type { FlatConfig, PossibleRuleModule, RuleModule };

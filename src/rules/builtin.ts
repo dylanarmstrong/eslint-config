@@ -1,5 +1,6 @@
-import type { FlatConfig } from '../types.js';
 import requires from '../utils/requires.js';
+import type { FlatConfig } from '../types.js';
+import { addValid } from '../utils/add-valid.js';
 
 const hasPlugin = requires('@eslint/js', ['@eslint/js']);
 
@@ -10,7 +11,7 @@ if (hasPlugin) {
   config = plugin.default.configs.recommended;
 }
 
-const rules = {
+const rules: FlatConfig['rules'] = {
   'accessor-pairs': 'error',
   'array-bracket-spacing': ['error', 'never'],
   'array-callback-return': 'error',
@@ -248,4 +249,4 @@ const rules = {
   yoda: 'error',
 };
 
-export default [config, { rules }].filter(Boolean);
+export default addValid([{ config }, { config: { rules } }]);

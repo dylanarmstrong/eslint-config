@@ -1,4 +1,5 @@
 import { FlatConfig } from '../types.js';
+import { addValid } from '../utils/add-valid.js';
 import requires from '../utils/requires.js';
 
 // Check for valid prettier setup
@@ -21,4 +22,4 @@ if (hasPlugin) {
   }
 }
 
-export default { config, valid: config !== undefined };
+export default addValid([{ config }]);

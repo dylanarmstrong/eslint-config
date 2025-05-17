@@ -1,5 +1,6 @@
 import requires from '../utils/requires.js';
 import type { FlatConfig } from '../types.js';
+import { addValid } from '../utils/add-valid.js';
 
 // Check for valid react-hooks setup
 const hasPlugin = requires('react-hooks', [
@@ -20,4 +21,4 @@ if (hasPlugin) {
   };
 }
 
-export default { config, valid: config !== undefined };
+export default addValid([{ config }]);

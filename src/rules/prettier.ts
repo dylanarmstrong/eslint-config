@@ -1,14 +1,15 @@
-import type { FlatConfig } from '../types.js';
 import requires from '../utils/requires.js';
+import type { FlatConfig } from '../types.js';
+import { addValid } from '../utils/add-valid.js';
 
 // Check for valid prettier setup
 const hasPlugin = requires('prettier', ['prettier', 'eslint-config-prettier']);
 
-let config: undefined | FlatConfig[];
+let config: undefined | FlatConfig;
 
 if (hasPlugin) {
-  const plugin = await import('eslint-config-prettier');
-  config = [plugin.default];
+  const plugin = await import('eslint-config-prettier/flat');
+  config = plugin.default;
 }
 
-export default { config, valid: config !== undefined };
+export default addValid([{ config }]);
