@@ -1,26 +1,31 @@
 import { addValid } from '../utils/add-valid.js';
 import requires from '../utils/requires.js';
 
-import type { FlatConfig } from '../types.js';
+import type { PossibleRuleModule } from '../types.js';
 
 // Check for valid prettier setup
 const hasPlugin = requires('unicorn', ['eslint-plugin-unicorn']);
 
-let config: undefined | FlatConfig;
+let configs: undefined | PossibleRuleModule[];
 
 if (hasPlugin) {
   const plugin = await import('eslint-plugin-unicorn');
-  config = plugin.default.configs.recommended;
-
-  if (config.rules) {
-    // Vite environment file cannot be renamed
-    config.rules['unicorn/prevent-abbreviations'] = [
-      'error',
-      {
-        ignore: [String.raw`vite-env\.d$`],
+  configs = [
+    { config: plugin.default.configs.recommended },
+    {
+      config: {
+        rules: {
+          'unicorn/prevent-abbreviations': [
+            'error',
+            {
+              // Vite environment file cannot be renamed
+              ignore: [String.raw`vite-env\.d$`],
+            },
+          ],
+        },
       },
-    ];
-  }
+    },
+  ];
 }
 
-export default addValid([{ config }]);
+export default addValid(configs);

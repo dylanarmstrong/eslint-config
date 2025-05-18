@@ -47,4 +47,4 @@ type PossibleRuleModule =
   | { config: undefined }
   | undefined;
 
-export type { FlatConfig, PossibleRuleModule, RuleModule, RulesRecord };
+export type { FlatConfig, PossibleRuleModule, RuleModule };

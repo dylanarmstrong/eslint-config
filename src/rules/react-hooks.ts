@@ -1,7 +1,7 @@
 import { addValid } from '../utils/add-valid.js';
 import requires from '../utils/requires.js';
 
-import type { FlatConfig } from '../types.js';
+import type { PossibleRuleModule } from '../types.js';
 
 // Check for valid react-hooks setup
 const hasPlugin = requires('react-hooks', [
@@ -9,17 +9,21 @@ const hasPlugin = requires('react-hooks', [
   'eslint-plugin-react-hooks',
 ]);
 
-let config: undefined | FlatConfig;
+let configs: undefined | PossibleRuleModule[];
 
 if (hasPlugin) {
   const plugin = await import('eslint-plugin-react-hooks');
 
-  config = {
-    plugins: {
-      'react-hooks': plugin.default,
+  configs = [
+    {
+      config: {
+        plugins: {
+          'react-hooks': plugin.default,
+        },
+        rules: plugin.default.configs.recommended.rules,
+      },
     },
-    rules: plugin.default.configs.recommended.rules,
-  };
+  ];
 }
 
-export default addValid([{ config }]);
+export default addValid(configs);

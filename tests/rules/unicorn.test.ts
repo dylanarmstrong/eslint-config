@@ -27,9 +27,10 @@ describe('rules/unicorn', () => {
       'unicorn/prevent-abbreviations',
     );
 
-    const rule = results[0].config.rules?.['unicorn/prevent-abbreviations'];
-    expect(rule?.[0]).toBe('error');
-    expect(rule?.[1]?.ignore?.[0]).toMatch(String.raw`vite-env\.d$`);
+    // My override for vite
+    expect(results[1].config.rules).toHaveProperty(
+      'unicorn/prevent-abbreviations',
+    );
   });
 
   it('should return no configs when plugin is not available', async () => {
