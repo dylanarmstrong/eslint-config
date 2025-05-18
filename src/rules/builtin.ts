@@ -1,6 +1,7 @@
-import requires from '../utils/requires.js';
-import type { FlatConfig } from '../types.js';
 import { addValid } from '../utils/add-valid.js';
+import requires from '../utils/requires.js';
+
+import type { FlatConfig, RulesRecord } from '../types.js';
 
 const hasPlugin = requires('@eslint/js', ['@eslint/js']);
 
@@ -11,7 +12,7 @@ if (hasPlugin) {
   config = plugin.default.configs.recommended;
 }
 
-const rules: FlatConfig['rules'] = {
+const rules: RulesRecord = {
   'accessor-pairs': 'error',
   'array-bracket-spacing': ['error', 'never'],
   'array-callback-return': 'error',

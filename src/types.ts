@@ -33,6 +33,7 @@ type FlatConfig = Partial<{
     react: {
       version: string;
     };
+    [key: string]: unknown;
   }>;
 }>;
 
@@ -46,4 +47,4 @@ type PossibleRuleModule =
   | { config: undefined }
   | undefined;
 
-export type { FlatConfig, PossibleRuleModule, RuleModule };
+export type { FlatConfig, PossibleRuleModule, RuleModule, RulesRecord };

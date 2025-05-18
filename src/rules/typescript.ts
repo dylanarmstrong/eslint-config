@@ -1,6 +1,7 @@
-import hasTypescript from '../utils/has-typescript.js';
-import type { PossibleRuleModule } from '../types.js';
 import { addValid } from '../utils/add-valid.js';
+import hasTypescript from '../utils/has-typescript.js';
+
+import type { PossibleRuleModule } from '../types.js';
 
 // Check for valid typescript setup
 const isTypescript = hasTypescript();

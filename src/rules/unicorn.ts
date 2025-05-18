@@ -1,6 +1,7 @@
-import { FlatConfig } from '../types.js';
 import { addValid } from '../utils/add-valid.js';
 import requires from '../utils/requires.js';
+
+import type { FlatConfig } from '../types.js';
 
 // Check for valid prettier setup
 const hasPlugin = requires('unicorn', ['eslint-plugin-unicorn']);

@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+
 import { getPath } from './get-path.js';
 
 const check = (package_: string): string | undefined => {

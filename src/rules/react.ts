@@ -1,7 +1,8 @@
-import requires from '../utils/requires.js';
-import type { PossibleRuleModule } from '../types.js';
-import { getPath } from '../utils/get-path.js';
 import { addValid } from '../utils/add-valid.js';
+import { getPath } from '../utils/get-path.js';
+import requires from '../utils/requires.js';
+
+import type { PossibleRuleModule } from '../types.js';
 
 // Check for valid react setup
 const hasPlugin = requires('react', ['react', 'eslint-plugin-react']);
