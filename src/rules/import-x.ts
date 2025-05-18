@@ -7,7 +7,7 @@ import type { PossibleRuleModule } from '../types.js';
 // Check for valid typescript setup
 const isTypescript = hasTypescript();
 
-// Check for valid prettier setup
+// Check for valid eslint-plugin-import-x setup
 const hasPlugin = isTypescript
   ? requires('import-x', [
       'eslint-plugin-import-x',
