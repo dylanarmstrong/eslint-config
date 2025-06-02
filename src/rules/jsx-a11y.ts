@@ -10,7 +10,6 @@ let configs: undefined | PossibleRuleModule[];
 
 if (hasPlugin) {
   const plugin = await import('eslint-plugin-jsx-a11y');
-
   configs = [{ config: plugin.default.flatConfigs.recommended }];
 }
 

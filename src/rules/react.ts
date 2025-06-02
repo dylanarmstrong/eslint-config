@@ -25,10 +25,10 @@ if (hasPlugin && reactPath) {
   }
 
   configs = [
-    { config: plugin.default.configs.flat?.['recommended'] },
+    { config: plugin.default.configs.flat['recommended'] },
     {
       config: requireJsxRuntime
-        ? plugin.default.configs.flat?.['jsx-runtime']
+        ? plugin.default.configs.flat['jsx-runtime']
         : undefined,
     },
     {
